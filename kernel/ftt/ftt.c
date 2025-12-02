@@ -12,11 +12,13 @@
 
 struct ftt_stat fttstat;
 
-#define entity_is_task(se)	(!se->my_q)
+// #define entity_is_task(se)	(!se->my_q)
 
-inline int is_ftt(struct sched_entity *se)
+static inline bool is_ftt_marked(struct sched_entity *se)
 {
-	return likely(entity_is_task(se)) && (se->ftt_mark || atomic64_read(&se->ftt_dyn_mark));
+    // Проверить, является ли сущность задачей без использования my_q
+    // Используйте вместо этого:
+    return (se->ftt_mark || atomic64_read(&se->ftt_dyn_mark));
 }
 
 inline u64 ftt_vruntime(struct cfs_rq *cfs_rq)
