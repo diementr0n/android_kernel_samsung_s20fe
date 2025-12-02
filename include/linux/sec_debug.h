@@ -152,8 +152,8 @@ extern void secdbg_exin_set_slave_ocp(void);
 #define secdbg_exin_set_aud(a)		do { } while (0)
 #define secdbg_exin_set_gpuinfo(a)		do { } while (0)
 #define secdbg_exin_set_epd(a)		do { } while (0)
-#define secdbg_exin_set_unfz(a)		do { } while (0)
-#define secdbg_exin_get_unfz(a)		do { } while (0)
+#define secdbg_exin_set_unfz(a, b) do { } while (0)  // Теперь принимает 2 аргумента
+#define secdbg_exin_get_unfz() ""                    // Возвращает пустую строку (для panic)
 #define secdbg_exin_set_master_ocp()		do { } while (0)
 #define secdbg_exin_set_slave_ocp()		do { } while (0)
 #endif /* CONFIG_SEC_DEBUG_EXTRA_INFO */
